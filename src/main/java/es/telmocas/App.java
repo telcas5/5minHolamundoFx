@@ -6,6 +6,7 @@ import javafx.scene.Group;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import javafx.scene.control.Button;
@@ -26,15 +27,19 @@ public class App extends Application {
 //    }
 
     @Override
-    public void start(Stage stage) {
-        stage.setTitle("Stage with a Sized Scene");
-        Group root = new Group(new Button("Hello"));
-        Scene scene = new Scene(root, 300, 100);
+    public void start(Stage stage) throws IOException {
+        FXMLLoader root = new FXMLLoader(App.class.getResource("holamundo.fxml"));
+        Scene scene = new Scene(root.load(), 300, 100);
         stage.setScene(scene);
         stage.show();
     }
+//    stage.setTitle("Stage with a Sized Scene");
+//    Group root = new Group(new Button("Hello"));
+//    Scene scene = new Scene(root, 300, 100);
+//        stage.setScene(scene);
+//        stage.show();
 
-//
+
 //    static void setRoot(String fxml) throws IOException {
 //        scene.setRoot(loadFXML(fxml));
 //    }
